@@ -1,0 +1,49 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :age %><br>
+        <%= f.text_field :age %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :table_number %><br>
+        <%= f.select :table_number, (1..13).to_a, include_blank: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :seat_number %><br>
+        <%= f.select :seat_number, (1..12).to_a, include_blank: true %>
+      </div>
+    </div>
+
+    <div class="col-md-6" id='table_info'>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

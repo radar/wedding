@@ -1,0 +1,9 @@
+<h2>Table <%= params[:id] %></h2>
+
+<% if @people.empty? %>
+  Nobody is sitting at Table <%= params[:id] %> yet.
+<% else %>
+  <% @people.each do |person| %>
+    <%= person.seat_number %>. <%= person.name %><br>
+  <% end %>
+<% end %>

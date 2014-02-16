@@ -1,0 +1,16 @@
+<table class='table table-bordered'>
+  <% @groups.each do |group| %>
+    <tr>
+      <% group.each do |number, people| %>
+        <% if people %>
+          <td>
+            <h3>Table #<%= number %></h3>
+            <% people.each do |person| %>
+              <%= person.seat_number %>. <%= person.name %><br>
+            <% end %>
+          </td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

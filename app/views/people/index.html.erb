@@ -1,0 +1,27 @@
+<h1>People</h1>
+
+<%= link_to "Add new person", new_person_path, class: 'btn btn-primary' %>
+<%= link_to "Name List", people_list_path, class: 'btn btn-primary' %>
+<%= link_to "Table List", table_list_path, class: 'btn btn-primary' %>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Table Number</th>
+      <th>Seat Number</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><strong><%= link_to "#{person.last_name.upcase}, #{person.first_name}", [:edit, person] %></strong></td>
+        <td><%= person.table_number %></td>
+        <td><%= person.seat_number %></td>
+        <td><%= link_to 'Remove', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
