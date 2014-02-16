@@ -12,5 +12,5 @@ $(document).ready ->
   table_number.change (e) ->
     fetch_table(table_number.val())
   
-  if table_number.val() != ""
+  if table_number.length > 0 && table_number.val() != ""
     fetch_table(table_number.val())

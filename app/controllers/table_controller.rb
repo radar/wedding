@@ -5,10 +5,9 @@ class TableController < ApplicationController
   end
 
   def list
-    @groups = Person
-      .order(:seat_number)
+    @tables = Person.all
+      .sort_by { |p| p.seat_number.to_i }
       .group_by(&:table_number)
-      .sort_by { |t,people| t }
-      .in_groups_of(4)
+      .sort_by { |t,_| t.to_i }
   end
 end

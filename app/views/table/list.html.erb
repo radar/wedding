@@ -1,16 +1,17 @@
-<table class='table table-bordered'>
-  <% @groups.each do |group| %>
-    <tr>
-      <% group.each do |number, people| %>
-        <% if people %>
+<% @tables.in_groups_of(8).each do |page| %>
+  <table class='seating'>
+    <% page.in_groups_of(4).each do |tables| %>
+      <tr>
+        <% tables.compact.each do |table, people| %>
           <td>
-            <h3>Table #<%= number %></h3>
+            <h4>Table #<%= table %></h4>
             <% people.each do |person| %>
-              <%= person.seat_number %>. <%= person.name %><br>
+              <strong><%= person.seat_number %></strong>
+              <%= person.name %><br>
             <% end %>
           </td>
         <% end %>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+      </tr>
+    <% end %>
+  </table><br>
+<% end %>

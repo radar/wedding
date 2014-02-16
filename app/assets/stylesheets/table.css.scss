@@ -1,3 +1,21 @@
 // Place all the styles related to the table controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.seating {
+  width: 100%;
+  tr {
+    page-break-inside:avoid;
+    page-break-after:auto
+  }
+  
+  td {
+    padding: 1em;
+    vertical-align: top;
+    border: 1px solid black;
+
+    h4 {
+      margin: 0;
+    }
+  }
+}
