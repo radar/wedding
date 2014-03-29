@@ -1,6 +1,6 @@
 class TableController < ApplicationController
   def show
-    @people = Person.where(table_number: params[:id]).order(:seat_number)
+    @people = Person.where(table_number: params[:id]).sort_by { |p| p.seat_number.to_i }
     render layout: false
   end
 
