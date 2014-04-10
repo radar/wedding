@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
     if @person.save
       flash[:success] = "Added #{@person.name}!"
-      redirect_to people_path
+      redirect_to new_person_path
     else
       flash[:danger] = "Could not add #{@person.name}."
       render :new
