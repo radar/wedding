@@ -7,7 +7,7 @@
             <h4>Table #<%= table %></h4>
             <% people.each do |person| %>
               <strong><%= person.seat_number %></strong>
-              <%= person.name %><br>
+              <%= link_to person.name, edit_person_path(person) %><br>
             <% end %>
           </td>
         <% end %>
