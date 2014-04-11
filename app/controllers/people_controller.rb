@@ -30,7 +30,8 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
     if @person.update_attributes(person_params)
       flash[:success] = "Updated #{@person.name}'s details!"
-      redirect_to people_path
+      redirect_to session[:return_to] || people_path
+      session[:return_to] = nil
     else
       flash[:danger] = "Could not update #{@person.name}."
       render :new

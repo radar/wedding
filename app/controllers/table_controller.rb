@@ -5,6 +5,7 @@ class TableController < ApplicationController
   end
 
   def list
+    session[:return_to] = request.fullpath
     @tables = Person.all
       .sort_by { |p| p.seat_number.to_i }
       .group_by(&:table_number)
