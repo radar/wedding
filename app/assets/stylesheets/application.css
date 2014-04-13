@@ -17,3 +17,9 @@
  body {
   margin: 2% 10%;
  }
+
+ @media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
