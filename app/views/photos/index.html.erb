@@ -1,0 +1,8 @@
+<table class='table'>
+  <% @photos.each do |number, people| %>
+    <tr>
+      <td><%= number %></td>
+      <td><%= people.map(&:full_name).to_sentence %></td>
+    </tr>
+  <% end %>
+</table>

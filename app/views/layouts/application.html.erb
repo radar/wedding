@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li <% if params[:controller] == "people" %>class='active'<% end %>><%= link_to "People", people_path %></li>
+        <li <% if params[:controller] == "table" %>class='active'<% end %>><%= link_to "Tables", table_list_path %></li>
+        <li <% if params[:controller] == "photos" %>class='active'<% end %>><%= link_to "Photos", photos_path %></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</div>
 <% flash.each do |k,v| %>
   <div class='alert alert-<%= k %>'><%= v %></div>
 <% end %>

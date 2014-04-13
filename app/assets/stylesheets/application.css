@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require select2
  *= require_self
  *= require_tree .
  */
@@ -22,4 +23,12 @@
   a[href]:after {
     content: none !important;
   }
+
+  .navbar {
+    display: none;
+  }
+}
+
+.select2 {
+  width: 15em;
 }

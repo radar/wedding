@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216035512) do
+ActiveRecord::Schema.define(version: 20140413003200) do
 
   create_table "people", force: true do |t|
     t.string  "first_name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140216035512) do
     t.string  "dietary_requirements"
     t.string  "table_number"
     t.string  "seat_number"
+    t.string  "photo_number"
   end
 
 end

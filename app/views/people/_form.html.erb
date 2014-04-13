@@ -37,6 +37,11 @@
         <%= f.label :seat_number %><br>
         <%= f.select :seat_number, (1..12).to_a, include_blank: true %>
       </div>
+
+      <div class="form-group">
+        <%= f.label :photo_number %><br>
+        <%= f.select :photo_number, (1..40).to_a, { include_blank: true }, { multiple: true, :class => "select2" }  %>
+      </div>
     </div>
 
     <div class="col-md-6" id='table_info'>
