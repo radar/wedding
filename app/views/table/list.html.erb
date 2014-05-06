@@ -4,14 +4,25 @@
     <% page.in_groups_of(4).each do |tables| %>
       <tr>
         <% tables.compact.each do |table, people| %>
-          <td width='25%'>
-            <h4>Table #<%= table %></h4>
-            <% people.each do |person| %>
-              <strong><%= person.seat_number %></strong>
-              <%= link_to person.name, edit_person_path(person) %>
-              <strong><em><%= person_details(person) %></em></strong>
-              <br>
-            <% end %>
+          <td width='25%' valign='top'>
+            <table>
+              <thead>
+                <tr>
+                  <td><h4>Table #<%= table %></h4></td>
+                </tr>
+              </thead>
+              <tbody>
+                <% people.each do |person| %>
+                  <tr>
+                    <td>
+                      <strong><%= person.seat_number %></strong>
+                      <%= link_to person.name, edit_person_path(person) %>
+                      <strong><em><%= person_details(person) %></em></strong>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
           </td>
         <% end %>
       </tr>

@@ -8,14 +8,16 @@
     page-break-inside:avoid;
     page-break-after:auto
   }
-  
-  td {
-    padding: 1em;
-    vertical-align: top;
-    border: 1px solid black;
 
-    h4 {
-      margin: 0;
+  table {
+    td {
+      padding: 1em;
+      vertical-align: top;
+      border: 1px solid black;
+
+      h4 {
+        margin: 0;
+      }
     }
   }
 }
