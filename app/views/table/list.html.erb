@@ -5,7 +5,7 @@
     <% page.in_groups_of(4).each do |tables| %>
       <tr>
         <% tables.compact.each do |table, people| %>
-          <td>
+          <td width='25%'>
             <h4>Table #<%= table %></h4>
             <% people.each do |person| %>
               <strong><%= person.seat_number %></strong>
