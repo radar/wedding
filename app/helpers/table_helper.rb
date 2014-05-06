@@ -12,6 +12,7 @@ module TableHelper
       when "Allergy"
         details << "Allergy #{person.other_requirements}"
     end
+    details << "C" if person.age < 12
     "[#{details.join(', ')}]"
   end
 end
