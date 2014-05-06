@@ -9,7 +9,7 @@
             <% people.each do |person| %>
               <strong><%= person.seat_number %></strong>
               <%= link_to person.name, edit_person_path(person) %>
-              <strong><%= person_details(person) %></strong>
+              <strong><em><%= person_details(person) %></em></strong>
               <br>
             <% end %>
           </td>
